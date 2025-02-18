@@ -1,0 +1,371 @@
+
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="موقع متخصص في برمجة التطبيقات والخدمات التقنية">
+    <title>علي أسامة | برمجة التطبيقات المحترفة</title>
+    <style>
+        body {
+            font-family: 'Tahoma', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            color: #ecf0f1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* خلفية الصفحة الرئيسية */
+        #mainPage {
+            background-image: url('images/background.jpg'); /* مسار الصورة */
+            background-size: cover; /* تغطية الصفحة بالكامل */
+            background-position: center; /* توسيط الصورة */
+            background-repeat: no-repeat; /* منع التكرار */
+            background-color: #2c3e50; /* لون احتياطي */
+        }
+
+        .container {
+            max-width: 800px;
+            width: 90%;
+            margin: 2rem auto;
+            background: rgba(44, 62, 80, 0.9); /* خلفية شبه شفافة */
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+            text-align: center;
+            animation: fadeIn 0.5s forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            text-align: center;
+            color: #e74c3c;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .button {
+            background: linear-gradient(45deg, #27ae60, #2ecc71);
+            color: white;
+            padding: 1.2rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            width: 100%;
+        }
+
+        .button:hover {
+            background: linear-gradient(45deg, #2ecc71, #27ae60);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(0,0,0,0.4);
+        }
+
+        .nav-button {
+            width: 200px;
+            margin: 1rem auto;
+            background: #e67e22;
+            border-radius: 10px;
+            transition: background 0.3s ease;
+        }
+
+        .nav-button:hover {
+            background: #d35400;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .input-group input {
+            padding: 1rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            color: #ecf0f1;
+            outline: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .input-group input::placeholder {
+            color: #bdc3c7;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .button {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- الصفحة الرئيسية -->
+    <div id="mainPage" class="container">
+        <h1>مرحبا بكم في عالم البرمجة الاحترافية</h1>
+        
+        <div class="button-container">
+            <button class="button orange" id="orangeBtn" tabindex="0">
+                باقة Orange المجانية
+            </button>
+            
+            <button class="button etsalat" id="etsalatBtn">
+                باقة اتصالات المجانية
+            </button>
+            
+            <button class="button vodafone" id="vodafoneBtn">
+                باقة فودافون المجانية
+            </button>
+        </div>
+
+        <!-- زر الانتقال إلى صفحة "التالي 4 أذار" -->
+        <button class="button nav-button" id="nextBtn" tabindex="0">
+            التالي →
+        </button>
+
+        <!-- مشغل الأغنية -->
+        <div class="audio-player">
+            <h2>استمع إلى الأغنية</h2>
+            <audio controls autoplay>
+                <source src="audio/song.mp3" type="audio/mpeg">
+                متصفحك لا يدعم تشغيل الصوتيات.
+            </audio>
+        </div>
+    </div>
+
+    <!-- صفحة "باقات Orange" -->
+    <div id="orangePackagesPage" class="container" style="display: none;">
+        <h1>باقات Orange</h1>
+        
+        <div class="button-container">
+            <button class="button rectangle-button" id="orange500Btn1">
+                500 ميجا اورنج 1
+            </button>
+            
+            <button class="button rectangle-button" id="orange500Btn2">
+                500 ميجا اورنج 2
+            </button>
+
+            <!-- زر Gift Orange -->
+            <button class="button gift-orange-button" id="giftOrangeBtn">
+                Gift Orange
+            </button>
+        </div>
+
+        <!-- زر الرجوع إلى الصفحة الرئيسية -->
+        <button class="button nav-button" id="backToMainPage" tabindex="0">
+            الرجوع ←
+        </button>
+    </div>
+
+    <!-- صفحة "باقات اتصالات" -->
+    <div id="etsalatPackagesPage" class="container" style="display: none;">
+        <h1>باقات اتصالات</h1>
+        
+        <div class="button-container">
+            <!-- زر Etsalat Hours -->
+            <button class="button etsalat-hours" id="etsalatHoursBtn">
+                Etsalat Hours
+            </button>
+        </div>
+
+        <!-- زر الرجوع إلى الصفحة الرئيسية -->
+        <button class="button nav-button" id="backToMainPageFromEtsalat" tabindex="0">
+            الرجوع ←
+        </button>
+    </div>
+
+    <!-- صفحة "Etsalat Hours" -->
+    <div id="etsalatHoursPage" class="container" style="display: none;">
+        <h1>Etsalat Hours</h1>
+
+        <div class="input-group">
+            <input type="email" id="myEtisalatEmail" placeholder="ايميل ماي اتصالات">
+            <input type="password" id="myEtisalatPassword" placeholder="باسورد ماي اتصالات">
+        </div>
+        
+        <!-- زر إضافة العرض -->
+        <button class="button" id="addOfferBtn">
+            إضافة العرض
+        </button>
+
+        <!-- زر الرجوع إلى صفحة باقات اتصالات -->
+        <button class="button nav-button" id="backToEtsalatPackages" tabindex="0">
+            الرجوع ←
+        </button>
+    </div>
+
+    <!-- صفحة "500 ميجا اورنج 1" -->
+    <div id="orange500Page1" class="container" style="display: none;">
+        <h1>500 ميجا اورنج 1</h1>
+
+        <div class="input-group">
+            <input type="tel" id="orangePhoneNumber1" placeholder="رقم هاتف اورنج" required>
+            <input type="password" id="orangePassword1" placeholder="باسورد ماي اورنج" required>
+        </div>
+        
+        <!-- زر إضافة العرض -->
+        <button class="button" id="addOfferBtn1">
+            إضافة العرض
+        </button>
+
+        <!-- زر الرجوع إلى صفحة باقات Orange -->
+        <button class="button nav-button" id="backToOrangePackages1" tabindex="0">
+            الرجوع ←
+        </button>
+    </div>
+
+    <!-- صفحة "500 ميجا اورنج 2" -->
+    <div id="orange500Page2" class="container" style="display: none;">
+        <h1>500 ميجا اورنج 2</h1>
+
+        <div class="input-group">
+            <input type="tel" id="orangePhoneNumber2" placeholder="رقم هاتف اورنج" required>
+            <input type="password" id="orangePassword2" placeholder="باسورد ماي اورنج" required>
+        </div>
+        
+        <!-- زر إضافة العرض -->
+        <button class="button" id="addOfferBtn2">
+            إضافة العرض
+        </button>
+
+        <!-- زر الرجوع إلى صفحة باقات Orange -->
+        <button class="button nav-button" id="backToOrangePackages2" tabindex="0">
+            الرجوع ←
+        </button>
+    </div>
+
+    <!-- صفحة "Gift Orange" -->
+    <div id="giftOrangePage" class="container" style="display: none;">
+        <h1>Gift Orange</h1>
+
+        <div class="input-group">
+            <input type="tel" id="orangeGiftPhoneNumber" placeholder="رقم هاتف اورنج" required>
+            <input type="password" id="orangeGiftPassword" placeholder="باسورد ماي اورنج" required>
+        </div>
+        
+        <!-- زر إضافة العرض -->
+        <button class="button" id="addGiftOfferBtn">
+            إضافة العرض
+        </button>
+
+        <!-- زر الرجوع إلى صفحة باقات Orange -->
+        <button class="button nav-button" id="backToOrangePackagesGift" tabindex="0">
+            الرجوع ←
+        </button>
+    </div>
+
+    <script>
+        // عرض صفحة "باقات Orange" عند النقر على زر "باقة Orange المجانية"
+        document.getElementById('orangeBtn').addEventListener('click', () => {
+            document.getElementById('mainPage').style.display = 'none';
+            document.getElementById('orangePackagesPage').style.display = 'block';
+        });
+
+        // عرض صفحة "باقات اتصالات" عند النقر على زر "باقة اتصالات المجانية"
+        document.getElementById('etsalatBtn').addEventListener('click', () => {
+            document.getElementById('mainPage').style.display = 'none';
+            document.getElementById('etsalatPackagesPage').style.display = 'block';
+        });
+
+        // عرض صفحة "Etsalat Hours" عند النقر على زر "Etsalat Hours"
+        document.getElementById('etsalatHoursBtn').addEventListener('click', () => {
+            document.getElementById('etsalatPackagesPage').style.display = 'none';
+            document.getElementById('etsalatHoursPage').style.display = 'block';
+        });
+
+        // عرض صفحة "500 ميجا اورنج 1" عند النقر على زر "500 ميجا اورنج 1"
+        document.getElementById('orange500Btn1').addEventListener('click', () => {
+            document.getElementById('orangePackagesPage').style.display = 'none';
+            document.getElementById('orange500Page1').style.display = 'block';
+        });
+
+        // عرض صفحة "500 ميجا اورنج 2" عند النقر على زر "500 ميجا اورنج 2"
+        document.getElementById('orange500Btn2').addEventListener('click', () => {
+            document.getElementById('orangePackagesPage').style.display = 'none';
+            document.getElementById('orange500Page2').style.display = 'block';
+        });
+
+        // عرض صفحة "Gift Orange" عند النقر على زر "Gift Orange"
+        document.getElementById('giftOrangeBtn').addEventListener('click', () => {
+            document.getElementById('orangePackagesPage').style.display = 'none';
+            document.getElementById('giftOrangePage').style.display = 'block';
+        });
+
+        // الرجوع إلى الصفحة الرئيسية من صفحة "باقات Orange"
+        document.getElementById('backToMainPage').addEventListener('click', () => {
+            document.getElementById('orangePackagesPage').style.display = 'none';
+            document.getElementById('mainPage').style.display = 'block';
+        });
+
+        // الرجوع إلى الصفحة الرئيسية من صفحة "باقات اتصالات"
+        document.getElementById('backToMainPageFromEtsalat').addEventListener('click', () => {
+            document.getElementById('etsalatPackagesPage').style.display = 'none';
+            document.getElementById('mainPage').style.display = 'block';
+        });
+
+        // الرجوع إلى صفحة "باقات اتصالات" من صفحة "Etsalat Hours"
+        document.getElementById('backToEtsalatPackages').addEventListener('click', () => {
+            document.getElementById('etsalatHoursPage').style.display = 'none';
+            document.getElementById('etsalatPackagesPage').style.display = 'block';
+        });
+
+        // الرجوع إلى صفحة "باقات Orange" من صفحة "500 ميجا اورنج 1"
+        document.getElementById('backToOrangePackages1').addEventListener('click', () => {
+            document.getElementById('orange500Page1').style.display = 'none';
+            document.getElementById('orangePackagesPage').style.display = 'block';
+        });
+
+        // الرجوع إلى صفحة "باقات Orange" من صفحة "500 ميجا اورنج 2"
+        document.getElementById('backToOrangePackages2').addEventListener('click', () => {
+            document.getElementById('orange500Page2').style.display = 'none';
+            document.getElementById('orangePackagesPage').style.display = 'block';
+        });
+
+        // الرجوع إلى صفحة "باقات Orange" من صفحة "Gift Orange"
+        document.getElementById('backToOrangePackagesGift').addEventListener('click', () => {
+            document.getElementById('giftOrangePage').style.display = 'none';
+            document.getElementById('orangePackagesPage').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
